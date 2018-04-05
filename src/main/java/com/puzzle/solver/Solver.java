@@ -1,10 +1,12 @@
 package com.puzzle.solver;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 
 public class Solver {
 
-    private static SolutionState solve(SolutionState currentState) {
+    private static void solve(SolutionState currentState, List<SolutionState> solutions) {
         if (currentState.hasUnplaceShapes()) {
             UUID shapeId = currentState.nextRemainingShape();
             Shape shape = ShapeSet.getShape(shapeId);
@@ -12,55 +14,37 @@ public class Solver {
                 for (int y = 0; y < currentState.board.getHeight(); y++) {
                     SolutionState nextState = currentState.copy();
                     if (nextState.placeShape(x, y, shape, Rotation.North)) {
-                        SolutionState completedPath = Solver.solve(nextState);
-                        if (completedPath != null)
-                            return completedPath;
+                        Solver.solve(nextState, solutions);
                     }
                     // else try rotating the shape in the same location.
                     nextState = currentState.copy();
                     if (nextState.placeShape(x, y, shape, Rotation.East)) {
-                        SolutionState completedPath = Solver.solve(nextState);
-                        if (completedPath != null)
-                            return completedPath;
+                        Solver.solve(nextState, solutions);
                     }
 
                     nextState = currentState.copy();
                     if (nextState.placeShape(x, y, shape, Rotation.South)) {
-                        SolutionState completedPath = Solver.solve(nextState);
-                        if (completedPath != null)
-                            return completedPath;
+                        Solver.solve(nextState, solutions);
                     }
 
                     nextState = currentState.copy();
                     if (nextState.placeShape(x, y, shape, Rotation.West)) {
-                        SolutionState completedPath = Solver.solve(nextState);
-                        if (completedPath != null)
-                            return completedPath;
+                        Solver.solve(nextState, solutions);
                     }
                 }
             }
-            // iterated through all shapes without finding a path
-            // return null to indicated to the caller that this path failed to place the remaining shapes from given state
-            return null;
         }
         else {
-            return currentState;
+            solutions.add(currentState);
         }
     }
 
-    public static SolutionState solve() {
+    public static List<SolutionState> solve() {
         SolutionState startState = new SolutionState(ShapeSet.getAllShapes());
+        List<SolutionState> solutions = new ArrayList<>();
 
-        SolutionState finalState = solve(startState);
+       solve(startState, solutions);
 
-        if (finalState != null) {
-            System.out.println("Solution found");
-            System.out.println(finalState.toString());
-            return finalState;
-        }
-        else {
-            System.out.println("No Solution found");
-            return null;
-        }
+       return solutions;
     }
 }
