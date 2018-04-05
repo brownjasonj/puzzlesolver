@@ -73,11 +73,11 @@ public class SolutionState {
 
         // check it doesn't overlap any shape already placed on board
         // and that placing the shape doesn't create a solution where two adjacent elements have the same value
-        for(int i = x; i < (x + shapeWidth); i++) {
-            for (int j = y; j < (y + shapeHeight); j++) {
-                Element shapeElement = shapeElements[i - x][j - y];
-                if (this.board.getElements()[i][j] != Element.Empty &&  shapeElement != Element.Empty) {
-                    System.out.print("board = " + this.board.getElements()[i][j] + " shape = " + shapeElements[i - x][j - y]);
+        for (int j = y; j < (y + shapeHeight); j++) {
+            for(int i = x; i < (x + shapeWidth); i++) {
+                Element shapeElement = shapeElements[j - y][i - x];
+                if (this.board.getElements()[j][i] != Element.Empty &&  shapeElement != Element.Empty) {
+                    System.out.print("board = " + this.board.getElements()[j][i] + " shape = " + shapeElements[j - y][i - x]);
                     return false;
                 }
 
@@ -88,19 +88,19 @@ public class SolutionState {
                 // White can only be adjacent to Green or Empty
                 //
                 if (i > 0) {
-                    if (this.board.getElements()[i-1][j] != Element.Empty &&  this.board.getElements()[i-1][j] == shapeElement)
+                    if (this.board.getElements()[j][i-1] != Element.Empty &&  this.board.getElements()[j][i-1] == shapeElement)
                         return false;
                 }
                 if (i < (board.getWidth() - 1)) {
-                    if (this.board.getElements()[i+1][j] != Element.Empty &&  this.board.getElements()[i+1][j] == shapeElement)
+                    if (this.board.getElements()[j][i+1] != Element.Empty &&  this.board.getElements()[j][i+1] == shapeElement)
                         return false;
                 }
                 if (j > 0) {
-                    if (this.board.getElements()[i][j-1] != Element.Empty &&  this.board.getElements()[i][j-1] == shapeElement)
+                    if (this.board.getElements()[j-1][i] != Element.Empty &&  this.board.getElements()[j-1][i] == shapeElement)
                         return false;
                 }
                 if (j < (board.getHeight() - 1)) {
-                    if (this.board.getElements()[i][j+1] != Element.Empty &&  this.board.getElements()[i][j+1] == shapeElement)
+                    if (this.board.getElements()[j+1][i] != Element.Empty &&  this.board.getElements()[j+1][i] == shapeElement)
                         return false;
                 }
             }
@@ -115,9 +115,9 @@ public class SolutionState {
         for(int i = x; i < (x + shapeWidth); i++) {
             for (int j = y; j < (y + shapeHeight); j++) {
                 // if shapeElement is Empty, then don't copy to the board!
-                Element copyElement = shapeElements[i - x][j - y];
+                Element copyElement = shapeElements[j - y][i - x];
                 if (copyElement != Element.Empty)
-                    this.board.getElements()[i][j] = copyElement;
+                    this.board.getElements()[j][i] = copyElement;
             }
         }
 

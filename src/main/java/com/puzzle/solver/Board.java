@@ -12,7 +12,7 @@ public class Board {
     public Board(int width, int height) {
         this.width = width;
         this.height = height;
-        this.board = new Element[width][height];
+        this.board = new Element[height][width];
         this.reset();
     }
 
@@ -31,7 +31,7 @@ public class Board {
     private void reset() {
         for(int i = 0; i < this.width; i++) {
             for(int j = 0; j < this.height; j++) {
-                board[i][j] = Element.Empty;
+                board[j][i] = Element.Empty;
             }
         }
     }
@@ -40,7 +40,7 @@ public class Board {
         Board newBoard = new Board(this.width, this.height);
         for(int i = 0; i < this.getWidth(); i++)
             for(int j = 0; j < this.getHeight(); j++)
-                newBoard.board[i][j] = this.board[i][j];
+                newBoard.board[j][i] = this.board[j][i];
         return newBoard;
     }
 }

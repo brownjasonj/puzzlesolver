@@ -19,7 +19,7 @@
     {
       "name": "T-Shape",
       "dimensions": {
-        "width": 2,
+        "width": 3,
         "height": 2
       },
       "elements": [
@@ -139,18 +139,7 @@
         "height": 2
       },
       "elements": [
-        ["Empty", "Wmpty", "White", "Empty"],
-        ["Green", "White", "Green", "White"]
-      ]
-    },
-    {
-      "name": "3x3 Steps",
-      "dimensions": {
-        "width": 4,
-        "height": 2
-      },
-      "elements": [
-        ["Empty", "Wmpty", "White", "Empty"],
+        ["Empty", "Empty", "White", "Empty"],
         ["Green", "White", "Green", "White"]
       ]
     }

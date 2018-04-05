@@ -11,9 +11,9 @@ class ShapeRotation {
         this.width = width;
         this.height = height;
         this.rotation = rotation;
-        this.elements = new Element[width][height];
+        this.elements = new Element[height][width];
         for(int x = 0; x < width; x++)
             for(int y = 0; y < height; y++)
-                this.elements[x][y] = elements[x][y];
+                this.elements[y][x] = elements[y][x];
     }
 }
