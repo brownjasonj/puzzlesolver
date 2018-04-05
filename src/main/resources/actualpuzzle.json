@@ -1,0 +1,158 @@
+{
+  "name": "Actual Puzzle",
+  "dimensions": {
+    "width": 8,
+    "height": 8
+  },
+  "shapes": [
+    {
+      "name": "L-Shape",
+      "dimensions": {
+        "width": 2,
+        "height": 2
+      },
+      "elements": [
+        ["White", "Empty"],
+        ["Green", "White"]
+      ]
+    },
+    {
+      "name": "T-Shape",
+      "dimensions": {
+        "width": 2,
+        "height": 2
+      },
+      "elements": [
+        ["Green", "White", "Green"],
+        ["Empty", "Green", "Green"]
+      ]
+    },
+    {
+      "name": "3 high L-Shape Right",
+      "dimensions": {
+        "width": 2,
+        "height": 3
+      },
+      "elements": [
+        ["Green", "Empty"],
+        ["White", "Empty"],
+        ["Green", "White"]
+      ]
+    },
+    {
+      "name": "3 high L-Shape Left",
+       "dimensions": {
+        "width": 2,
+        "height": 3
+      },
+      "elements": [
+        ["Empty", "White"],
+        ["Empty", "Green"],
+        ["Green", "White"]
+      ]
+    },
+    {
+      "name": "4 high L-Shape Left",
+      "dimensions": {
+        "width": 2,
+        "height": 4
+      },
+      "elements": [
+        ["Empty", "Green"],
+        ["Empty", "White"],
+        ["Empty", "Green"],
+        ["Green", "White"]
+      ]
+    },
+    {
+      "name": "4 high L-Shape Right",
+      "dimensions": {
+        "width": 2,
+        "height": 4
+      },
+      "elements": [
+        ["Empty", "White"],
+        ["Empty", "Green"],
+        ["Empty", "White"],
+        ["White", "Green"]
+      ]
+    },
+    {
+      "name": "4 wide Z-Shape Bottom",
+      "dimensions": {
+        "width": 4,
+        "height": 2
+      },
+      "elements": [
+        ["Green", "White", "Empty", "Empty"],
+        ["Empty", "Green", "White", "Green"]
+      ]
+    },
+    {
+      "name": "3 wide Z-Shape",
+      "dimensions": {
+        "width": 3,
+        "height": 2
+      },
+      "elements": [
+        ["Green", "White", "Empty"],
+        ["Empty", "Green", "White"]
+      ]
+    },
+    {
+      "name": "4 wide Z-Shape Top",
+      "dimensions": {
+        "width": 4,
+        "height": 2
+      },
+      "elements": [
+        ["Empty", "White", "Green", "White"],
+        ["White", "Green", "Empty", "Empty"]
+      ]
+    },
+    {
+      "name": "4 wide Z-Shape Top",
+      "dimensions": {
+        "width": 4,
+        "height": 2
+      },
+      "elements": [
+        ["Empty", "White", "Green", "White"],
+        ["White", "Green", "Empty", "Empty"]
+      ]
+    },
+    {
+      "name": "4 wide Top Notch-Shape Left",
+      "dimensions": {
+        "width": 4,
+        "height": 2
+      },
+      "elements": [
+        ["Empty", "Green", "Empty", "Empty"],
+        ["Green", "White", "Green", "White"]
+      ]
+    },
+    {
+      "name": "4 wide Top Notch-Shape Right",
+      "dimensions": {
+        "width": 4,
+        "height": 2
+      },
+      "elements": [
+        ["Empty", "Wmpty", "White", "Empty"],
+        ["Green", "White", "Green", "White"]
+      ]
+    },
+    {
+      "name": "3x3 Steps",
+      "dimensions": {
+        "width": 4,
+        "height": 2
+      },
+      "elements": [
+        ["Empty", "Wmpty", "White", "Empty"],
+        ["Green", "White", "Green", "White"]
+      ]
+    }
+  ]
+}
