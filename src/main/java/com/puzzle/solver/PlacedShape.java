@@ -1,22 +1,21 @@
 package com.puzzle.solver;
 
-import java.util.UUID;
 
 public class PlacedShape {
-    protected UUID id;
+    protected String name;
     protected Rotation rotation;
     protected int x;
     protected int y;
 
-    PlacedShape(int x, int y, UUID id, Rotation rotation) {
+    PlacedShape(int x, int y, String name, Rotation rotation) {
         this.x = x;
         this.y = y;
-        this.id = id;
+        this.name = name;
         this.rotation = rotation;
     }
 
-    public UUID getId() {
-        return id;
+    public String getName() {
+        return name;
     }
 
     public Rotation getRotation() {

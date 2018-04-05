@@ -1,0 +1,107 @@
+{
+  "name": "problem1",
+  "dimensions": {
+    "width": 2,
+    "height": 2
+  },
+  "shapes": [
+    {
+      "name": "Left L",
+      "rotations": [
+        {
+          "rotation": "North",
+          "dimensions": {
+            "width": 2,
+            "height": 2
+          },
+          "elements": [
+            ["White", "Empty"],
+            ["Green", "White"]
+          ]
+        },
+        {
+          "rotation": "East",
+          "dimensions": {
+            "width": 2,
+            "height": 2
+          },
+          "elements": [
+            ["Empty", "White"],
+            ["White", "Green"]
+          ]
+        },
+        {
+          "rotation": "South",
+          "dimensions": {
+            "width": 2,
+            "height": 2
+          },
+          "elements": [
+            ["White", "Green"],
+            ["Empty", "White"]
+          ]
+        },
+        {
+          "rotation": "West",
+          "dimensions": {
+            "width": 2,
+            "height": 2
+          },
+          "elements": [
+            ["Green", "White"],
+            ["White", "Empty"]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Left L2",
+      "rotations": [
+        {
+          "rotation": "North",
+          "dimensions": {
+            "width": 2,
+            "height": 2
+          },
+          "elements": [
+            ["Green", "Empty"],
+            ["White", "Green"]
+          ]
+        },
+        {
+          "rotation": "East",
+          "dimensions": {
+            "width": 2,
+            "height": 2
+          },
+          "elements": [
+            ["Empty", "Green"],
+            ["Green", "White"]
+          ]
+        },
+        {
+          "rotation": "South",
+          "dimensions": {
+            "width": 2,
+            "height": 2
+          },
+          "elements": [
+            ["Green", "White"],
+            ["Empty", "Green"]
+          ]
+        },
+        {
+          "rotation": "West",
+          "dimensions": {
+            "width": 2,
+            "height": 2
+          },
+          "elements": [
+            ["White", "Green"],
+            ["Green", "Empty"]
+          ]
+        }
+      ]
+    }
+  ]
+}

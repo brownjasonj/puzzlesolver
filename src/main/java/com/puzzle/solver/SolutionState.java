@@ -3,35 +3,33 @@ package com.puzzle.solver;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
-import java.util.UUID;
 
 public class SolutionState {
     protected List<PlacedShape> placedShapes;
-    protected List<UUID> remainingShapes;
+    protected List<String> remainingShapes;
     protected Board board;
 
-    protected SolutionState() {
-        this.board = Board.getBoard();
+    protected SolutionState(Board board) {
+        this.board = board;
         this.placedShapes = new ArrayList<>();
         this.remainingShapes = new ArrayList<>();
     }
 
-    SolutionState(Set<UUID> shapeSet) {
-        this();
-        for(UUID id : shapeSet)
-            this.remainingShapes.add(id);
+    SolutionState(Board board, Set<String> shapeSet) {
+        this(board);
+        for(String name : shapeSet)
+            this.remainingShapes.add(name);
     }
 
     private SolutionState(SolutionState toBeCopied) {
-        this();
+        this(toBeCopied.getBoard().copy());
         for(PlacedShape ps : toBeCopied.placedShapes)
             this.placedShapes.add(ps);
-        for(UUID rs: toBeCopied.remainingShapes)
+        for(String rs: toBeCopied.remainingShapes)
             this.remainingShapes.add(rs);
-        this.board = toBeCopied.board.copy();
     }
 
-    public List<UUID> getRemainingShapes() {
+    public List<String> getRemainingShapes() {
         return remainingShapes;
     }
 
@@ -51,7 +49,7 @@ public class SolutionState {
         return !this.remainingShapes.isEmpty();
     }
 
-    public UUID nextRemainingShape() {
+    public String nextRemainingShape() {
         if (this.remainingShapes.isEmpty())
             return null;
         else
@@ -113,7 +111,7 @@ public class SolutionState {
 
         // ok it is a valid placement of the shape.  Add the shape placement to the list and add
         // the shape elements to the board
-        placedShapes.add(new PlacedShape(x, y, shape.getId(), rotation));
+        placedShapes.add(new PlacedShape(x, y, shape.getName(), rotation));
         for(int i = x; i < (x + shapeWidth); i++) {
             for (int j = y; j < (y + shapeHeight); j++) {
                 // if shapeElement is Empty, then don't copy to the board!
@@ -123,7 +121,7 @@ public class SolutionState {
             }
         }
 
-        this.remainingShapes.remove(shape.getId());
+        this.remainingShapes.remove(shape.getName());
 
         return true;
     }
@@ -131,7 +129,7 @@ public class SolutionState {
     @Override
     public String toString() {
         for(PlacedShape ps : placedShapes) {
-            System.out.println("id: " + ps.id.toString() + " x: " + ps.x + " y: " + ps.y + " rotation: " + ps.rotation);
+            System.out.println("id: " + ps.name.toString() + " x: " + ps.x + " y: " + ps.y + " rotation: " + ps.rotation);
         }
         return super.toString();
     }
