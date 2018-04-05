@@ -1,0 +1,33 @@
+spring:
+  profiles: default
+server:
+  port: 30001
+  #port: ${PORT:${SERVER_PORT:0}}
+version: 0.0.1
+solver:
+  board:
+    width: 64
+    height: 64
+---
+spring:
+  profiles: dev
+server:
+  port: 30001
+version: 0.0.1
+---
+spring:
+  profiles: test
+server:
+  port: 30001
+version: 0.0.3
+priceproviders: UBS
+services:
+  pricing:
+    url: http://localhost
+    port: 8081
+---
+spring:
+  profiles: prod
+server:
+  port: 8081
+version: 0.0.1
