@@ -63,7 +63,7 @@ public class SolutionState {
         int shapeHeight = shape.getHeight(rotation);
         Element[][] shapeElements = shape.getElements(rotation);
 
-        System.out.println("Trying to place " + shape.getName() + " at " + x + "," + y + " with rotation " + rotation);
+        //System.out.println("Trying to place " + shape.getName() + " at " + x + "," + y + " with rotation " + rotation);
 
         // check that the shape doesn't overlap edges of board
         if ((x + shapeWidth > board.getWidth())
@@ -77,7 +77,7 @@ public class SolutionState {
             for(int i = x; i < (x + shapeWidth); i++) {
                 Element shapeElement = shapeElements[j - y][i - x];
                 if (this.board.getElements()[j][i] != Element.Empty &&  shapeElement != Element.Empty) {
-                    System.out.print("board = " + this.board.getElements()[j][i] + " shape = " + shapeElements[j - y][i - x]);
+                    // System.out.print("board = " + this.board.getElements()[j][i] + " shape = " + shapeElements[j - y][i - x]);
                     return false;
                 }
 

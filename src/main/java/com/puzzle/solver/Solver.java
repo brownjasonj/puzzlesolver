@@ -24,21 +24,21 @@ public class Solver {
                     if (nextState.placeShape(x, y, shape, Rotation.North)) {
                         solve(nextState, solutions);
                     }
-                    // else try rotating the shape in the same location.
-                    nextState = currentState.copy();
-                    if (nextState.placeShape(x, y, shape, Rotation.East)) {
-                        solve(nextState, solutions);
-                    }
-
-                    nextState = currentState.copy();
-                    if (nextState.placeShape(x, y, shape, Rotation.South)) {
-                        solve(nextState, solutions);
-                    }
-
-                    nextState = currentState.copy();
-                    if (nextState.placeShape(x, y, shape, Rotation.West)) {
-                        solve(nextState, solutions);
-                    }
+//                    // else try rotating the shape in the same location.
+//                    nextState = currentState.copy();
+//                    if (nextState.placeShape(x, y, shape, Rotation.East)) {
+//                        solve(nextState, solutions);
+//                    }
+//
+//                    nextState = currentState.copy();
+//                    if (nextState.placeShape(x, y, shape, Rotation.South)) {
+//                        solve(nextState, solutions);
+//                    }
+//
+//                    nextState = currentState.copy();
+//                    if (nextState.placeShape(x, y, shape, Rotation.West)) {
+//                        solve(nextState, solutions);
+//                    }
                 }
             }
         }
