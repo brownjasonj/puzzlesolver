@@ -1,6 +1,7 @@
 package com.puzzle.solver;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Set;
 
@@ -8,11 +9,15 @@ public class SolutionState {
     protected List<PlacedShape> placedShapes;
     protected List<String> remainingShapes;
     protected Board board;
+    protected Date startTime;
+    protected Date endTime;
+    protected int duration;
 
     protected SolutionState(Board board) {
         this.board = board;
         this.placedShapes = new ArrayList<>();
         this.remainingShapes = new ArrayList<>();
+        this.startTime = new Date();
     }
 
     SolutionState(Board board, Set<String> shapeSet) {
@@ -27,10 +32,31 @@ public class SolutionState {
             this.placedShapes.add(ps);
         for(String rs: toBeCopied.remainingShapes)
             this.remainingShapes.add(rs);
+        this.startTime = toBeCopied.startTime;
     }
 
     public List<String> getRemainingShapes() {
         return remainingShapes;
+    }
+
+    public void setEndTime(Date endTime) {
+        this.endTime = endTime;
+    }
+
+    public void setDuration(int duration) {
+        this.duration = duration;
+    }
+
+    public Date getStartTime() {
+        return startTime;
+    }
+
+    public Date getEndTime() {
+        return endTime;
+    }
+
+    public int getDuration() {
+        return duration;
     }
 
     public Board getBoard() {

@@ -1,6 +1,7 @@
 package com.puzzle.solver;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class Solver {
@@ -24,26 +25,29 @@ public class Solver {
                     if (nextState.placeShape(x, y, shape, Rotation.North)) {
                         solve(nextState, solutions);
                     }
-//                    // else try rotating the shape in the same location.
-//                    nextState = currentState.copy();
-//                    if (nextState.placeShape(x, y, shape, Rotation.East)) {
-//                        solve(nextState, solutions);
-//                    }
-//
-//                    nextState = currentState.copy();
-//                    if (nextState.placeShape(x, y, shape, Rotation.South)) {
-//                        solve(nextState, solutions);
-//                    }
-//
-//                    nextState = currentState.copy();
-//                    if (nextState.placeShape(x, y, shape, Rotation.West)) {
-//                        solve(nextState, solutions);
-//                    }
+                    // else try rotating the shape in the same location.
+                    nextState = currentState.copy();
+                    if (nextState.placeShape(x, y, shape, Rotation.East)) {
+                        solve(nextState, solutions);
+                    }
+
+                    nextState = currentState.copy();
+                    if (nextState.placeShape(x, y, shape, Rotation.South)) {
+                        solve(nextState, solutions);
+                    }
+
+                    nextState = currentState.copy();
+                    if (nextState.placeShape(x, y, shape, Rotation.West)) {
+                        solve(nextState, solutions);
+                    }
                 }
             }
         }
         else {
+            Date endTime = new Date();
+            currentState.setEndTime(endTime);
             solutions.add(currentState);
+            System.out.println("Solution found @" + endTime + " total found : " + solutions.size());
         }
     }
 
