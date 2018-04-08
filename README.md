@@ -7,7 +7,7 @@ Get the repository, then in a terminal from the root directory of the project (i
 
 gradle bootRun
 
-Once the application is running you need to post one of the json files (found in the resources directory) to
+Once the application is running you need to post one of the json files (found in the resources directory puzzlesolver/src/main/resources/) to
 
 http://localhost:30001/solveproblem
 
