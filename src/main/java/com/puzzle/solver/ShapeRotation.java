@@ -1,7 +1,7 @@
 package com.puzzle.solver;
 
 
-class ShapeRotation {
+public class ShapeRotation {
     public Element[][] elements;
     public int width;
     public int height;
@@ -15,5 +15,21 @@ class ShapeRotation {
         for(int x = 0; x < width; x++)
             for(int y = 0; y < height; y++)
                 this.elements[y][x] = elements[y][x];
+    }
+
+    public Element[][] getElements() {
+        return elements;
+    }
+
+    public int getWidth() {
+        return width;
+    }
+
+    public int getHeight() {
+        return height;
+    }
+
+    public Rotation getRotation() {
+        return rotation;
     }
 }

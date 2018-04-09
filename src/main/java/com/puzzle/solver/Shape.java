@@ -5,14 +5,16 @@ import java.util.HashMap;
 public class Shape {
     private HashMap<Rotation, ShapeRotation> shapes;
     private String name;
+    private String label;
 
-    public Shape(String name) {
+    public Shape(String name, String label) {
         this.name = name;
+        this.label = label;
         this.shapes = new HashMap<>();
     }
 
-    public Shape(String name, int width, int height, Element[][] elements) {
-        this(name);
+    public Shape(String name, String label, int width, int height, Element[][] elements) {
+        this(name, label);
         this.addRotation(width, height, Rotation.North, elements);
         Element[][] east = this.rotateArray90clockwise(elements);
         this.addRotation(height, width, Rotation.East, east);
@@ -45,6 +47,13 @@ public class Shape {
         }
     }
 
+    public ShapeRotation getShapeRotation(Rotation rotation) {
+        if (shapes.containsKey(rotation))
+            return shapes.get(rotation);
+        else
+            return null;
+    }
+
     public int getWidth(Rotation rotation) {
         if (shapes.containsKey(rotation))
             return shapes.get(rotation).width;
@@ -61,6 +70,10 @@ public class Shape {
 
     public String getName() {
         return name;
+    }
+
+    public String getLabel() {
+        return label;
     }
 
     public Element[][] getElements(Rotation rotation) {

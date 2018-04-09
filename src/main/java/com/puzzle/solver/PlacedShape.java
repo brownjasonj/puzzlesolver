@@ -7,7 +7,7 @@ public class PlacedShape {
     protected int x;
     protected int y;
 
-    PlacedShape(int x, int y, String name, Rotation rotation) {
+    public PlacedShape(int x, int y, String name, Rotation rotation) {
         this.x = x;
         this.y = y;
         this.name = name;

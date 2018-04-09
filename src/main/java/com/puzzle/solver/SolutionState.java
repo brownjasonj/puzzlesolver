@@ -20,7 +20,7 @@ public class SolutionState {
         this.startTime = new Date();
     }
 
-    SolutionState(Board board, Set<String> shapeSet) {
+    public SolutionState(Board board, Set<String> shapeSet) {
         this(board);
         for(String name : shapeSet)
             this.remainingShapes.add(name);
@@ -82,7 +82,7 @@ public class SolutionState {
             return this.remainingShapes.get(0);
     }
 
-    boolean placeShape(int x, int y, Shape shape, Rotation rotation) {
+    public boolean placeShape(int x, int y, Shape shape, Rotation rotation) {
 
         // check that shape can be placed in the x, y given
         int shapeWidth = shape.getWidth(rotation);
@@ -150,6 +150,43 @@ public class SolutionState {
         this.remainingShapes.remove(shape.getName());
 
         return true;
+    }
+
+    public void printState(ShapeSet shapeSet) {
+        int boardWidth = this.board.getWidth();
+        int boardHeight = this.board.getHeight();
+        String[][] state = new String[boardHeight][boardWidth];
+        for(int i = 0; i < boardHeight; i++) {
+            for(int j = 0; j < boardWidth; j++)
+                state[i][j] = " ";
+        }
+
+        for(PlacedShape ps : placedShapes) {
+            int x = ps.x;
+            int y = ps.y;
+            Shape shape = shapeSet.getShape(ps.name);
+            ShapeRotation shapeRotation = shape.getShapeRotation(ps.rotation);
+            for(int i = x; i < (x + shapeRotation.getWidth()); i++) {
+                for (int j = y; j < (y + shapeRotation.getHeight()); j++) {
+                    // if shapeElement is Empty, then don't copy to the board!
+                    Element copyElement = shapeRotation.getElements()[j - y][i - x];
+                    if (copyElement != Element.Empty)
+                        state[j][i] = shape.getLabel();
+                }
+            }
+        }
+
+        System.out.println("*****************************************");
+        for(int y = 0; y < boardHeight; y++) {
+            System.out.print("| ");
+            for (int x = 0; x < boardWidth; x++) {
+                    System.out.print(state[y][x] + " | ");
+            }
+            System.out.println("");
+        }
+        System.out.println("*****************************************");
+        System.out.println();
+
     }
 
     @Override
