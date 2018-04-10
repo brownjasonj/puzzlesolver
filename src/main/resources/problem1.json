@@ -7,10 +7,7 @@
   "shapes": [
     {
       "name": "Left L",
-      "dimensions": {
-        "width": 2,
-        "height": 2
-      },
+      "label": "A",
       "elements": [
         ["White", "Empty"],
         ["Green", "White"]
@@ -18,10 +15,7 @@
     },
     {
       "name": "Left L2",
-      "dimensions": {
-        "width": 2,
-        "height": 2
-      },
+      "label": "B",
       "elements": [
         ["Green", "Empty"],
         ["White", "Green"]

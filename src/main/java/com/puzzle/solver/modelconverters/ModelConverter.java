@@ -9,7 +9,9 @@ public class ModelConverter {
         ShapeSet shapeSet = new ShapeSet();
         for(ShapeModel sm : shapeModels) {
             System.out.println("Shape " + sm.name);
-            Shape shape = new Shape(sm.name, sm.label, sm.dimensions.width, sm.dimensions.height, sm.elements);
+            int height = sm.elements.length;
+            int width = sm.elements[0].length;
+            Shape shape = new Shape(sm.name, sm.label, width, height, sm.elements);
             shapeSet.addShape(shape);
         }
         return shapeSet;

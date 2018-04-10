@@ -8,10 +8,6 @@
     {
       "name": "L-Shape",
       "label": "A",
-      "dimensions": {
-        "width": 2,
-        "height": 2
-      },
       "elements": [
         ["White", "Empty"],
         ["Green", "White"]
@@ -20,10 +16,6 @@
     {
       "name": "T-Shape",
       "label": "B",
-      "dimensions": {
-        "width": 3,
-        "height": 2
-      },
       "elements": [
         ["Green", "White", "Green"],
         ["Empty", "Green", "Empty"]
@@ -32,10 +24,6 @@
     {
       "name": "3 high L-Shape Right",
       "label": "C",
-      "dimensions": {
-        "width": 2,
-        "height": 3
-      },
       "elements": [
         ["Green", "Empty"],
         ["White", "Empty"],
@@ -45,10 +33,6 @@
     {
       "name": "3 high L-Shape Left",
       "label": "D",
-      "dimensions": {
-        "width": 2,
-        "height": 3
-      },
       "elements": [
         ["Empty", "White"],
         ["Empty", "Green"],
@@ -58,10 +42,6 @@
     {
       "name": "4 high L-Shape Left",
       "label": "E",
-      "dimensions": {
-        "width": 2,
-        "height": 4
-      },
       "elements": [
         ["Empty", "Green"],
         ["Empty", "White"],
@@ -72,10 +52,6 @@
     {
       "name": "4 high L-Shape upsidedown",
       "label": "F",
-      "dimensions": {
-        "width": 2,
-        "height": 4
-      },
       "elements": [
         ["White", "Green"],
         ["Empty", "White"],
@@ -86,10 +62,6 @@
     {
       "name": "4 High Z-Shape Right",
       "label": "G",
-      "dimensions": {
-        "width": 2,
-        "height": 4
-      },
       "elements": [
         ["White", "Empty"],
         ["Green", "Empty"],
@@ -100,10 +72,6 @@
     {
       "name": "4 High Z-Shape left",
       "label": "H",
-      "dimensions": {
-        "width": 2,
-        "height": 4
-      },
       "elements": [
         ["Empty", "Green"],
         ["Empty", "White"],
@@ -114,10 +82,6 @@
     {
       "name": "3 High Z-Shape left",
       "label": "I",
-      "dimensions": {
-        "width": 2,
-        "height": 3
-      },
       "elements": [
         ["Empty", "White"],
         ["White", "Green"],
@@ -127,10 +91,6 @@
     {
       "name": "4 High  Notch-Shape Right",
       "label": "J",
-      "dimensions": {
-        "width": 2,
-        "height": 4
-      },
       "elements": [
         ["Green", "Empty"],
         ["White", "Green"],
@@ -141,10 +101,6 @@
     {
       "name": "4 Wide  Notch-Shape Top",
       "label": "K",
-      "dimensions": {
-        "width": 4,
-        "height": 2
-      },
       "elements": [
         ["Empty", "Empty", "White", "Empty"],
         ["Green", "White", "Green", "White"]
@@ -153,10 +109,6 @@
     {
       "name": "3x3 Steps",
       "label": "L",
-      "dimensions": {
-        "width": 3,
-        "height": 3
-      },
       "elements": [
         ["White", "Green", "Empty"],
         ["Empty", "White", "Green"],
@@ -166,10 +118,6 @@
     {
       "name": "3x3 S",
       "label": "M",
-      "dimensions": {
-        "width": 3,
-        "height": 3
-      },
       "elements": [
         ["Empty", "White", "Green"],
         ["Empty", "Green", "Empty"],
@@ -179,10 +127,6 @@
     {
       "name": "3x3 N",
       "label": "N",
-      "dimensions": {
-        "width": 3,
-        "height": 3
-      },
       "elements": [
         ["Empty", "Empty", "White"],
         ["Green", "White", "Green"],
