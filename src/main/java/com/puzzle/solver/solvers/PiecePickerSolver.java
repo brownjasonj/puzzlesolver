@@ -14,7 +14,7 @@ public class PiecePickerSolver {
     protected static int callCount = 0;
 
     protected void increment(SolutionState state) {
-        SimpleIterativeSolver.callCount++;
+        PiecePickerSolver.callCount++;
 //        if (SimpleIterativeSolver.callCount < 20)
 //            state.printState(shapeSet);
 //

@@ -89,7 +89,6 @@ public class SolutionState {
         int shapeHeight = shape.getHeight(rotation);
         Element[][] shapeElements = shape.getElements(rotation);
 
-        //System.out.println("Trying to place " + shape.getName() + " at " + x + "," + y + " with rotation " + rotation);
 
         // check that the shape doesn't overlap edges of board
         if ((x + shapeWidth > board.getWidth())
@@ -187,13 +186,5 @@ public class SolutionState {
         System.out.println("*****************************************");
         System.out.println();
 
-    }
-
-    @Override
-    public String toString() {
-        for(PlacedShape ps : placedShapes) {
-            System.out.println("id: " + ps.name.toString() + " x: " + ps.x + " y: " + ps.y + " rotation: " + ps.rotation);
-        }
-        return super.toString();
     }
 }
